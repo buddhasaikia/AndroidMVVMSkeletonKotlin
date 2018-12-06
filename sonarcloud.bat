@@ -1,5 +1,5 @@
 ./gradlew sonarqube \
-  -Dsonar.projectKey=buddhasaikia_AndroidMVVMSkeletonProject \
+  -Dsonar.projectKey=buddhasaikia_AndroidMVVMSkeletonKotlin \
   -Dsonar.organization=buddhasaikia-github \
   -Dsonar.host.url=https://sonarcloud.io \
-  -Dsonar.login=24b8efde1c67e0fa0f56f712ad26a4a546206901
+  -Dsonar.login=135f794174ff569ee878f6d814afbcaf2fe47827
