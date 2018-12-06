@@ -9,7 +9,7 @@ import io.reactivex.Observable
 class MainViewModel(private val repository: Repository) :
         BaseViewModel(), DataSource.Greetings {
 
-    override fun greetings(): Observable<String> {
+    override fun greetings(): Observable<String>? {
         return repository.greetings()
     }
 }
