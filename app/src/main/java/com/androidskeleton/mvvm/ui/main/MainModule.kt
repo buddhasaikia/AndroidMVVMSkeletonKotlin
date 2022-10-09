@@ -1,4 +1,4 @@
-package com.androidskeleton.mvvm.module.main
+package com.androidskeleton.mvvm.ui.main
 
 
 import com.androidskeleton.mvvm.di.scope.FragmentScoped

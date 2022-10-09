@@ -1,4 +1,4 @@
-package com.androidskeleton.mvvm.module.base
+package com.androidskeleton.mvvm.ui.base
 
 import android.os.Bundle
 

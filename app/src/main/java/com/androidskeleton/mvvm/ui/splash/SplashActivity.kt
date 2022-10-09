@@ -1,10 +1,10 @@
-package com.androidskeleton.mvvm.module.splash
+package com.androidskeleton.mvvm.ui.splash
 
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 
-import com.androidskeleton.mvvm.module.main.MainActivity
+import com.androidskeleton.mvvm.ui.main.MainActivity
 
 
 class SplashActivity : Activity() {

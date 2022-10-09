@@ -1,4 +1,4 @@
-package com.androidskeleton.mvvm.module.main
+package com.androidskeleton.mvvm.ui.main
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.lifecycle.ViewModelProvider
 import com.androidskeleton.mvvm.R
 import com.androidskeleton.mvvm.di.scope.PerActivity
-import com.androidskeleton.mvvm.module.base.DaggerBaseFragment
+import com.androidskeleton.mvvm.ui.base.DaggerBaseFragment
 import com.androidskeleton.mvvm.util.CustomViewModelFactory
 import com.androidskeleton.mvvm.util.ErrorMessageFactory
 import com.androidskeleton.mvvm.util.Utils

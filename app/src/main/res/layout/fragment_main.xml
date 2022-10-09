@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.androidskeleton.mvvm.module.main.MainFragment">
+    tools:context="com.androidskeleton.mvvm.ui.main.MainFragment">
 
     <TextView
         android:id="@+id/lbl_greetings"

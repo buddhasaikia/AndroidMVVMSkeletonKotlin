@@ -1,10 +1,10 @@
-package com.androidskeleton.mvvm.module.main
+package com.androidskeleton.mvvm.ui.main
 
 
 import android.os.Bundle
 
 import com.androidskeleton.mvvm.R
-import com.androidskeleton.mvvm.module.base.DaggerBaseActivity
+import com.androidskeleton.mvvm.ui.base.DaggerBaseActivity
 import com.androidskeleton.mvvm.util.ActivityUtils
 
 class MainActivity : DaggerBaseActivity() {
