@@ -1,11 +1,11 @@
 package com.androidskeleton.mvvm.module.main
 
-import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.lifecycle.ViewModelProvider
 import com.androidskeleton.mvvm.R
 import com.androidskeleton.mvvm.di.scope.PerActivity
 import com.androidskeleton.mvvm.module.base.DaggerBaseFragment
@@ -36,26 +36,26 @@ class MainFragment : DaggerBaseFragment() {
         return rootView
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        mainViewModel = ViewModelProviders.of(this, viewModelFactory).get(MainViewModel::class.java)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        mainViewModel = ViewModelProvider(this, viewModelFactory)[MainViewModel::class.java]
         val lblGreetings = rootView?.findViewById<TextView>(R.id.lbl_greetings)
         mainViewModel?.greetings()
-                ?.subscribe(object : Observer<String> {
-                    override fun onSubscribe(d: Disposable) {
-                        mainViewModel?.addSubscription(d)
-                    }
+            ?.subscribe(object : Observer<String> {
+                override fun onSubscribe(d: Disposable) {
+                    mainViewModel?.addSubscription(d)
+                }
 
-                    override fun onNext(s: String) {
-                        lblGreetings?.text = s
-                    }
+                override fun onNext(s: String) {
+                    lblGreetings?.text = s
+                }
 
-                    override fun onError(e: Throwable) {
-                        utils.showToast(errorMessageFactory.getError(e))
-                    }
+                override fun onError(e: Throwable) {
+                    utils.showToast(errorMessageFactory.getError(e))
+                }
 
-                    override fun onComplete() {}
-                })
+                override fun onComplete() {}
+            })
     }
 
     companion object {

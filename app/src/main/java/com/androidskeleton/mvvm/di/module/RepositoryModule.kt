@@ -1,8 +1,7 @@
 package com.androidskeleton.mvvm.di.module
 
-import android.arch.lifecycle.ViewModelProvider
 import android.content.Context
-
+import androidx.lifecycle.ViewModelProvider
 import com.androidskeleton.mvvm.BuildConfig
 import com.androidskeleton.mvvm.data.api.ApiService
 import com.androidskeleton.mvvm.data.datasource.LocalDataSource
@@ -14,18 +13,15 @@ import com.androidskeleton.mvvm.util.NullOnEmptyConverterFactory
 import com.androidskeleton.mvvm.util.Utils
 import com.facebook.stetho.okhttp3.StethoInterceptor
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
-
-import java.util.concurrent.TimeUnit
-
-import javax.inject.Named
-import javax.inject.Singleton
-
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.util.concurrent.TimeUnit
+import javax.inject.Named
+import javax.inject.Singleton
 
 @Module
 class RepositoryModule {

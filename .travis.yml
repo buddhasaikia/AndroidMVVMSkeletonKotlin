@@ -15,12 +15,12 @@ cache:
 script:
 - chmod +x ./gradlew
 #sonar cloud scanner settings
+# other script steps might be done before running the actual analysis
+- sonar-scanner
 addons:
   sonarcloud:
     organization: "buddhasaikia-github" # the key of the org you chose at step #3
     token:
       secure: "IJ5IN1DxiCZc92uNdAD7sq5NY6qRscMzC5tRZOCp9OpPq9+4IBA1DzV4GiQupVwVe/PJtuVekBiB9YmAdh5zPsh9/6kQc+sB2liqQCHoPbLJaCNAwM//T9c4Np8BbsDR3FvBhKUe/Hs/GWFniHLhusBn0iaLjyAAGslj8bH8mFX5g/VpUyqJ83GSAvFkm/ugWApFM9AVjo3vYkx3QDVH/DpuKhEvZGydpjIywcPPUbxh0nSXDc/6GsyfiWTtcHa6S1YdT0slgzs4MzrvXUFNywFNGZWIZe1Ua34X9a5hWfJzVhr2/FIvpyAPyis0d1CO4GYZ1+hUmkQwg8GSz621OkmkTB6e18P/ymFnX/zYNUtWC/SXeGa6WTet0BvXg0/7jOkJorrfHx8YZF1TJyN7X9XZPyJU3MumtLzdP0T5NTwR5VP33bNM7esCu87ogVugmm8oUhWrqd+z8rPieKKSNSdXB1fe9RCXmRko/w8UNjTus83FbIDiV/0xdLN/LWaA9laIHq1qT3/k8cbTyw5DMuwY5cxtwUfG6QpaQvB0qSvBjP55u6wcGAVul+reVx6XNCZc9rBTOEpIwhmrqn5ciplLcx2/pD598X8DV+OPP097i+eb8vaPPw6zUTvJ3oSwMULOADnilegT5UXnrL87tytWkV0wpyMF9U4mLebqhEk="
       # encrypted value of your token
-script:
-  # other script steps might be done before running the actual analysis
-  - sonar-scanner
+

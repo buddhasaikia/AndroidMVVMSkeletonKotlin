@@ -16,10 +16,8 @@
 
 package com.androidskeleton.mvvm.util
 
-import android.support.v4.app.Fragment
-import android.support.v4.app.FragmentManager
-import android.support.v4.app.FragmentTransaction
-
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 import com.androidskeleton.mvvm.R
 
 object ActivityUtils {
