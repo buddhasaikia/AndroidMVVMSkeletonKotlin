@@ -45,6 +45,7 @@ ext {
     dagger2 = '2.42'//'2.15'
     retrofit = '2.4.0'
     rxandroid = '2.0.2'
+    rxJava = '2.2.21'
     rxandroidAdapter = '1.0.0'
     loggingInterceptor = '3.4.1'
     stetho = '1.6.0'

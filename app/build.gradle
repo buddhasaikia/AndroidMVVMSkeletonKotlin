@@ -115,7 +115,7 @@ dependencies {
     implementation "com.google.dagger:dagger-android-support:$rootProject.ext.dagger2"
 
     implementation "io.reactivex.rxjava2:rxandroid:$rootProject.ext.rxandroid"
-    implementation "io.reactivex.rxjava2:rxjava:$rootProject.ext.rxandroid"
+    implementation "io.reactivex.rxjava2:rxjava:$rootProject.ext.rxJava"
     implementation "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:$rxandroidAdapter"
     implementation "com.squareup.retrofit2:retrofit:$rootProject.ext.retrofit"
     implementation "com.squareup.retrofit2:converter-gson:$rootProject.ext.retrofit"
