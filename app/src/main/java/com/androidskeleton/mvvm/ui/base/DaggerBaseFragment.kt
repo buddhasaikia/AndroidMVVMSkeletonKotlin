@@ -11,13 +11,14 @@ import dagger.android.support.DaggerFragment
 
 abstract class DaggerBaseFragment<T: ViewBinding> : DaggerFragment() {
 
-    private var binding: T? = null
-    protected val viewBinding: T get() = binding as T
+    private var _viewBinding: T? = null
+    val viewBinding
+        get() = _viewBinding as T
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         super.onCreateView(inflater, container, savedInstanceState)
-        binding = bindingInflater.invoke(inflater, container, false)
-        return binding?.root
+        _viewBinding = bindingInflater.invoke(inflater, container, false)
+        return _viewBinding?.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -30,7 +31,7 @@ abstract class DaggerBaseFragment<T: ViewBinding> : DaggerFragment() {
     abstract val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> T
 
     override fun onDestroyView() {
+        _viewBinding = null
         super.onDestroyView()
-        binding = null
     }
 }

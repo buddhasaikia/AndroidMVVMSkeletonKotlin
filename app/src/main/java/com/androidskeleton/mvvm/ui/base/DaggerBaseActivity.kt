@@ -6,13 +6,14 @@ import androidx.viewbinding.ViewBinding
 import dagger.android.support.DaggerAppCompatActivity
 
 abstract class DaggerBaseActivity<T: ViewBinding> : DaggerAppCompatActivity() {
-    private var binding: T? = null
-    protected val viewBinding get() = binding?.root
+    private var _viewBinding: T? = null
+    protected val viewBinding
+        get() = _viewBinding as T
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = bindingInflater.invoke(layoutInflater)
-        setContentView(binding?.root)
+        _viewBinding = bindingInflater.invoke(layoutInflater)
+        setContentView(_viewBinding?.root)
         initUI()
     }
 
@@ -21,7 +22,7 @@ abstract class DaggerBaseActivity<T: ViewBinding> : DaggerAppCompatActivity() {
     abstract val bindingInflater: (LayoutInflater) -> T
 
     override fun onDestroy() {
-        binding = null
+        _viewBinding = null
         super.onDestroy()
     }
 }

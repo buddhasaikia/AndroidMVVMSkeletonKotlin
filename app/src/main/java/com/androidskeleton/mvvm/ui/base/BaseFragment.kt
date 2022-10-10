@@ -8,14 +8,14 @@ import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
 
 abstract class BaseFragment<T: ViewBinding> : Fragment() {
-    private var binding: T? = null
+    private var _viewBinding: T? = null
 
-    protected val viewBinding get() = binding?.root
+    protected val viewBinding get() = _viewBinding as T
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         super.onCreateView(inflater, container, savedInstanceState)
-        binding = bindingInflater.invoke(inflater, container, false)
-        return binding?.root
+        _viewBinding = bindingInflater.invoke(inflater, container, false)
+        return _viewBinding?.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -28,7 +28,7 @@ abstract class BaseFragment<T: ViewBinding> : Fragment() {
     abstract val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> T
 
     override fun onDestroyView() {
+        _viewBinding = null
         super.onDestroyView()
-        binding = null
     }
 }

@@ -7,13 +7,13 @@ import androidx.viewbinding.ViewBinding
 
 abstract class BaseActivity<T : ViewBinding> : AppCompatActivity() {
 
-    private var binding: T? = null
-    protected val viewBinding get() = binding?.root
+    private var _viewBinding: T? = null
+    protected val viewBinding get() = _viewBinding as T
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = bindingInflater.invoke(layoutInflater)
-        setContentView(binding?.root)
+        _viewBinding = bindingInflater.invoke(layoutInflater)
+        setContentView(_viewBinding?.root)
         initUI()
     }
 
@@ -22,7 +22,7 @@ abstract class BaseActivity<T : ViewBinding> : AppCompatActivity() {
     abstract val bindingInflater: (LayoutInflater) -> T
 
     override fun onDestroy() {
-        binding = null
+        _viewBinding = null
         super.onDestroy()
     }
 }
